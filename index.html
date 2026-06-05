@@ -1,308 +1,236 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Landing Page - Camiseta de Fútbol</title>
-
-    <style>
-
-        body{
-            font-family: Arial, sans-serif;
-        }
-
-        img{
-            width: 200px;
-        }
-
-    </style>
-
+    <title>FitLife App</title>
 </head>
-
 <body>
 
-    <!-- ENCABEZADO -->
-    <header>
+    <h1>FitLife App</h1>
+    <p>Registro de usuarios y soporte técnico</p>
 
-        <img 
-            src="https://cdn-icons-png.flaticon.com/512/25/25694.png"
-            alt="Logo de la tienda">
+    <!-- FORMULARIO DE REGISTRO -->
+    <section>
+        <h2>Registro de Usuario</h2>
 
-        <form>
+        <form action="https://formspree.io/f/xpqewvwa" method="POST">
 
-            <input 
-                type="search"
-                placeholder="Buscar camisetas">
+            <fieldset>
+                <legend>Información Personal</legend>
 
-            <button>
-                Buscar
-            </button>
+                <label for="nombre">Nombre completo:</label><br>
+                <input type="text"
+                       id="nombre"
+                       name="nombre"
+                       placeholder="Ingrese su nombre completo"
+                       autocomplete="name"
+                       minlength="3"
+                       maxlength="60"
+                       required>
+                <br><br>
+
+                <label for="email">Correo electrónico:</label><br>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="correo@ejemplo.com"
+                       autocomplete="email"
+                       required>
+                <br><br>
+
+                <label for="password">Contraseña:</label><br>
+                <input type="password"
+                       id="password"
+                       name="password"
+                       placeholder="Mínimo 8 caracteres"
+                       autocomplete="new-password"
+                       minlength="8"
+                       required>
+                <br><br>
+
+                <label for="edad">Edad:</label><br>
+                <input type="number"
+                       id="edad"
+                       name="edad"
+                       min="13"
+                       max="100"
+                       required>
+                <br><br>
+
+                <label for="fechaNacimiento">Fecha de nacimiento:</label><br>
+                <input type="date"
+                       id="fechaNacimiento"
+                       name="fechaNacimiento"
+                       required>
+
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Cuenta de Usuario</legend>
+
+                <label for="usuario">Nombre de usuario:</label><br>
+                <input type="text"
+                       id="usuario"
+                       name="usuario"
+                       placeholder="5 a 12 caracteres"
+                       minlength="5"
+                       maxlength="12"
+                       pattern="[A-Za-z0-9]{5,12}"
+                       required
+                       aria-label="Nombre de usuario">
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Ubicación</legend>
+
+                <label for="pais">País:</label><br>
+                <select id="pais" name="pais" required>
+                    <option value="">Seleccione un país</option>
+                    <option>Argentina</option>
+                    <option>Chile</option>
+                    <option>Uruguay</option>
+                    <option>México</option>
+                    <option>España</option>
+                </select>
+
+                <br><br>
+
+                <label for="ciudad">Ciudad:</label><br>
+                <input type="text"
+                       id="ciudad"
+                       name="ciudad"
+                       list="listaCiudades"
+                       placeholder="Escriba una ciudad"
+                       required>
+
+                <datalist id="listaCiudades">
+                    <option value="Buenos Aires">
+                    <option value="Córdoba">
+                    <option value="Rosario">
+                    <option value="Montevideo">
+                    <option value="Madrid">
+                    <option value="Santiago">
+                </datalist>
+
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Perfil</legend>
+
+                <p>Género:</p>
+
+                <input type="radio" id="masculino" name="genero" value="Masculino" required>
+                <label for="masculino">Masculino</label>
+
+                <input type="radio" id="femenino" name="genero" value="Femenino">
+                <label for="femenino">Femenino</label>
+
+                <input type="radio" id="otro" name="genero" value="Otro">
+                <label for="otro">Otro</label>
+
+                <br><br>
+
+                <p>Intereses:</p>
+
+                <input type="checkbox" id="fitness" name="intereses" value="Fitness">
+                <label for="fitness">Fitness</label>
+
+                <input type="checkbox" id="nutricion" name="intereses" value="Nutrición">
+                <label for="nutricion">Nutrición</label>
+
+                <input type="checkbox" id="running" name="intereses" value="Running">
+                <label for="running">Running</label>
+
+                <input type="checkbox" id="yoga" name="intereses" value="Yoga">
+                <label for="yoga">Yoga</label>
+
+                <br><br>
+
+                <label for="biografia">Biografía corta:</label><br>
+                <textarea id="biografia"
+                          name="biografia"
+                          rows="5"
+                          cols="40"
+                          maxlength="300"
+                          placeholder="Cuéntanos algo sobre ti"></textarea>
+
+            </fieldset>
+
+            <br>
+
+            <button type="submit">Crear Cuenta</button>
 
         </form>
+    </section>
 
-        <nav>
+    <hr>
 
-            <ul>
+    <!-- FORMULARIO DE CONTACTO -->
+    <section>
+        <h2>Contacto y Soporte Técnico</h2>
 
-                <li>
-                    <a href="#">
-                        Inicio
-                    </a>
-                </li>
+        <form action="https://formspree.io/f/xpqewvwa" method="POST">
 
-                <li>
-                    <a href="#">
-                        Camisetas
-                    </a>
-                </li>
+            <label for="contactoNombre">Nombre:</label><br>
+            <input type="text"
+                   id="contactoNombre"
+                   name="contactoNombre"
+                   autocomplete="name"
+                   required>
 
-                <li>
-                    <a href="#">
-                        Ofertas
-                    </a>
-                </li>
+            <br><br>
 
-                <li>
-                    <a href="#">
-                        Contacto
-                    </a>
-                </li>
+            <label for="contactoEmail">Email:</label><br>
+            <input type="email"
+                   id="contactoEmail"
+                   name="contactoEmail"
+                   autocomplete="email"
+                   required>
 
-            </ul>
+            <br><br>
 
-        </nav>
+            <label for="motivo">Motivo de contacto:</label><br>
+            <select id="motivo" name="motivo" required>
+                <option value="">Seleccione una opción</option>
+                <option>Problema técnico</option>
+                <option>Consulta</option>
+                <option>Sugerencia</option>
+                <option>Facturación</option>
+            </select>
 
-    </header>
+            <br><br>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main>
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje"
+                      name="mensaje"
+                      rows="6"
+                      cols="50"
+                      required></textarea>
 
-        <!-- PRODUCTO -->
-        <section>
+            <br><br>
 
-            <h1>
-                Camiseta Titular Argentina 2026
-            </h1>
+            <input type="checkbox"
+                   id="terminos"
+                   name="terminos"
+                   required>
 
-            <p>
-                Estado:
-                <strong>Nueva</strong>
-            </p>
+            <label for="terminos">
+                Acepto los términos y condiciones
+            </label>
 
-            <figure>
+            <br><br>
 
-                <img
-                    src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=900"
-                    alt="Camiseta oficial de la selección argentina">
+            <button type="submit">Enviar Consulta</button>
 
-                <figcaption>
-                    Camiseta oficial titular de Argentina
-                </figcaption>
-
-            </figure>
-
-        </section>
-
-        <!-- PRECIO Y PAGOS -->
-        <section>
-
-            <h2>
-                Precio y pagos
-            </h2>
-
-            <p>
-                <del>$120.000</del>
-            </p>
-
-            <p>
-
-                <strong>$89.999</strong>
-
-                25% OFF
-
-            </p>
-
-            <p>
-                Hasta 6 cuotas sin interés
-            </p>
-
-            <button>
-                Comprar ahora
-            </button>
-
-        </section>
-
-        <!-- DESCRIPCIÓN -->
-        <section>
-
-            <h2>
-                Descripción
-            </h2>
-
-            <p>
-
-                Camiseta oficial de la selección argentina.
-                Tela liviana y cómoda ideal para entrenamientos
-                o uso diario.
-
-            </p>
-
-            <details>
-
-                <summary>
-                    Ver ficha técnica
-                </summary>
-
-                <ul>
-
-                    <li>
-                        Marca: Adidas
-                    </li>
-
-                    <li>
-                        Color: Celeste y blanco
-                    </li>
-
-                    <li>
-                        Talles: S, M, L y XL
-                    </li>
-
-                    <li>
-                        Material: Poliéster
-                    </li>
-
-                </ul>
-
-            </details>
-
-        </section>
-
-        <!-- OPINIONES -->
-        <section>
-
-            <h2>
-                Opiniones de usuarios
-            </h2>
-
-            <article>
-
-                <img
-                    src="https://randomuser.me/api/portraits/men/32.jpg"
-                    alt="Foto de perfil de Juan Pérez">
-
-                <h3>
-                    Juan Pérez
-                </h3>
-
-                <time datetime="2026-05-01">
-
-                    1 de mayo de 2026
-
-                </time>
-
-                <p>
-
-                    Excelente calidad y muy cómoda.
-
-                </p>
-
-            </article>
-
-            <article>
-
-                <img
-                    src="https://randomuser.me/api/portraits/women/44.jpg"
-                    alt="Foto de perfil de Martina López">
-
-                <h3>
-                    Martina López
-                </h3>
-
-                <time datetime="2026-04-28">
-
-                    28 de abril de 2026
-
-                </time>
-
-                <p>
-
-                    Me encantó la tela y el diseño.
-
-                </p>
-
-            </article>
-
-        </section>
-
-        <!-- PRODUCTOS RELACIONADOS -->
-        <aside>
-
-            <h2>
-                Productos relacionados
-            </h2>
-
-            <article>
-
-                <h3>
-                    Camiseta Messi 10
-                </h3>
-
-                <img
-                    src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=900"
-                    alt="Camiseta de fútbol Messi">
-
-                <p>
-                    $95.000
-                </p>
-
-            </article>
-
-            <article>
-
-                <h3>
-                    Camiseta Alternativa Argentina
-                </h3>
-
-                <img
-                    src="https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=900"
-                    alt="Camiseta alternativa de fútbol">
-
-                <p>
-                    $79.999
-                </p>
-
-            </article>
-
-        </aside>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            Contacto: tienda@gmail.com
-        </p>
-
-        <p>
-            Medios de pago:
-            tarjetas y transferencias
-        </p>
-
-        <p>
-            Garantía oficial incluida
-        </p>
-
-        <a href="#">
-            Centro de ayuda
-        </a>
-
-    </footer>
+        </form>
+    </section>
 
 </body>
-
 </html>
